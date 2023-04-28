@@ -1,0 +1,13 @@
+version: '2'
+services:
+    loan-app:
+        build: .
+        image: loan-app:latest
+        ports:
+            - 18800-18888:8082
+        networks:
+            - spring-cloud-network
+    
+networks:
+    spring-cloud-network:
+        driver: bridge
